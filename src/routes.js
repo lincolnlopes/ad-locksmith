@@ -11,4 +11,9 @@ var corsOptions = {
 routes.get("/hello", cors(corsOptions), (_req, res) => {
   return res.json({ message: "Hello World!" });
 });
+
+const LoginController = require("./app/controllers/LoginController");
+
+routes.get("/login", cors(corsOptions), LoginController.login);
+
 module.exports = routes;
